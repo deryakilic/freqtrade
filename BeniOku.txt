@@ -8,7 +8,14 @@ docker run --rm -v ~/.freqtrade/config.json:/freqtrade/config.json -it freqtrade
 
 localde çalıştırmak için:
 
+virtualenv oluşturmakta fayda var:
+python -m venv .env
+
+sonra virtualenv aktif hale getirilip:
 .env\scripts\activate
+
+TA-Lib kurulumu yapılıyor:
+pip install TA_Lib-0.4.17-cp37-cp37m-win_amd64.whl
 
 
 hyperopt optimizasyonu için:
