@@ -23,4 +23,3 @@ seçmece whitelist:
 
 
 hata mesajı:
-trrttr
