@@ -27,6 +27,4 @@ python freqtrade/main.py -c config_binance_full.json -s Scalp
 seçmece whitelist:
 "BQX/BTC"
 
-
-
 hata mesajı:
