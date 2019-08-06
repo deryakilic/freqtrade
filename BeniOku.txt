@@ -1,0 +1,138 @@
+﻿C:\Users\ben\.freqtrade\config.json dosyasında ayarlar yapılıyor.
+
+Daha sonra Docker Quickstart terminal'den:
+
+docker run --rm -v ~/.freqtrade/config.json:/freqtrade/config.json -it freqtrade
+
+
+
+localde çalıştırmak için:
+
+.env\scripts\activate
+
+
+hyperopt optimizasyonu için:
+python freqtrade/main.py -c config.json hyperopt --customhyperopt SampleHyperOpts -e 5000 --spaces all --refresh-pairs-cached
+
+Strateji için:
+
+python freqtrade/main.py -c config_binance_full.json -s Scalp
+seçmece whitelist:
+"BQX/BTC"
+
+
+
+hata mesajı:
+C:\python37\python.exe D:/freqtrade/freqtrade/main.py
+2019-06-19 10:46:21,202 - freqtrade.configuration - INFO - Verbosity set to 0
+2019-06-19 10:46:21,202 - freqtrade.configuration - INFO - Dry run is disabled
+2019-06-19 10:46:21,202 - freqtrade.configuration - WARNING - `forcebuy` RPC message enabled.
+2019-06-19 10:46:21,202 - freqtrade.configuration - INFO - Using DB: "sqlite:///tradesv3.sqlite"
+2019-06-19 10:46:21,202 - freqtrade.configuration - INFO - Checking exchange...
+2019-06-19 10:46:21,203 - freqtrade.configuration - INFO - Exchange "binance" is officially supported by the Freqtrade development team.
+2019-06-19 10:46:21,203 - freqtrade.configuration - INFO - Using max_open_trades: 20 ...
+2019-06-19 10:46:21,203 - freqtrade.configuration - INFO - Using data folder: user_data\data\binance ...
+2019-06-19 10:46:21,203 - freqtrade.freqtradebot - INFO - Starting freqtrade 0.18.5-dev
+2019-06-19 10:46:21,230 - freqtrade.resolvers.strategy_resolver - INFO - Using resolved strategy Strategy005 from 'D:\freqtrade\user_data\strategies'
+2019-06-19 10:46:21,231 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'ticker_interval' with value in config file: 1m.
+2019-06-19 10:46:21,231 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value in config file: BTC.
+2019-06-19 10:46:21,231 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value in config file: 0.0028.
+2019-06-19 10:46:21,231 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'use_sell_signal' with value in config file: True.
+2019-06-19 10:46:21,231 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'sell_profit_only' with value in config file: False.
+2019-06-19 10:46:21,231 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'ignore_roi_if_buy_signal' with value in config file: False.
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'1440': 0.01, '80': 0.02, '40': 0.03, '20': 0.04, '0': 0.05}
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ticker_interval: 1m
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.1
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive: 0.01
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.02
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: False
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'buy': 'limit', 'sell': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'buy': 'gtc', 'sell': 'gtc'}
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: BTC
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: 0.0028
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_sell_signal: True
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using sell_profit_only: False
+2019-06-19 10:46:21,232 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_buy_signal: False
+2019-06-19 10:46:21,232 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.telegram ...
+2019-06-19 10:46:21,420 - freqtrade.rpc.telegram - INFO - rpc.telegram is listening for following commands: [['status'], ['profit'], ['balance'], ['start'], ['stop'], ['forcesell'], ['forcebuy'], ['performance'], ['daily'], ['count'], ['reload_conf'], ['stopbuy'], ['whitelist'], ['blacklist'], ['edge'], ['help'], ['version']]
+2019-06-19 10:46:21,614 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True}
+2019-06-19 10:46:21,617 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': False}
+2019-06-19 10:46:21,635 - freqtrade.exchange.exchange - INFO - Using Exchange "Binance"
+2019-06-19 10:46:22,902 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange Binance
+2019-06-19 10:46:23,218 - freqtrade.wallets - INFO - Wallets synced.
+2019-06-19 10:46:23,218 - freqtrade.resolvers.pairlist_resolver - WARNING - Path "user_data\pairlist" does not exist
+2019-06-19 10:46:23,220 - freqtrade.resolvers.pairlist_resolver - INFO - Using resolved pairlist StaticPairList from 'D:\freqtrade\freqtrade\pairlist'
+2019-06-19 10:46:23,237 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2019-06-19 10:46:23,559 - freqtrade.worker - INFO - Changing state to: RUNNING
+2019-06-19 10:46:23,559 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': custom, 'status': "*Exchange:* `binance`\n*Stake per trade:* `0.0028 BTC`\n*Minimum ROI:* `{'1440': 0.01, '80': 0.02, '40': 0.03, '20': 0.04, '0': 0.05}`\n*Stoploss:* `-0.1`\n*Ticker Interval:* `1m`\n*Strategy:* `Strategy005`"}
+2019-06-19 10:46:23,662 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': "Searching for BTC pairs to buy and sell based on StaticPairList: ['ADX/BTC', 'AE/BTC', 'AGI/BTC', 'AION/BTC', 'AMB/BTC', 'APPC/BTC', 'ARDR/BTC', 'ARK/BTC', 'ARN/BTC', 'AST/BTC', 'ATOM/BTC', 'BAT/BTC', 'BCD/BTC', 'BCPT/BTC', 'BLZ/BTC', 'BNT/BTC', 'BQX/BTC', 'BRD/BTC', 'BTG/BTC', 'BTS/BTC', 'BTT/BTC', 'CDT/BTC', 'CELR/BTC', 'CMT/BTC', 'CND/BTC', 'CVC/BTC', 'DASH/BTC', 'DATA/BTC', 'DCR/BTC', 'DENT/BTC', 'DGD/BTC', 'DLT/BTC', 'DNT/BTC', 'DOCK/BTC', 'EDO/BTC', 'ELF/BTC', 'ENG/BTC', 'ENJ/BTC', 'EOS/BTC', 'ETC/BTC', 'ETH/BTC', 'EVX/BTC', 'FET/BTC', 'FTM/BTC', 'FUEL/BTC', 'FUN/BTC', 'GAS/BTC', 'GNT/BTC', 'GO/BTC', 'GRS/BTC', 'GTO/BTC', 'GVT/BTC', 'GXS/BTC', 'HC/BTC', 'HOT/BTC', 'ICX/BTC', 'INS/BTC', 'IOST/BTC', 'IOTA/BTC', 'IOTX/BTC', 'KEY/BTC', 'KMD/BTC', 'KNC/BTC', 'LEND/BTC', 'LINK/BTC', 'LOOM/BTC', 'LRC/BTC', 'LSK/BTC', 'LTC/BTC', 'LUN/BTC', 'MANA/BTC', 'MATIC/BTC', 'MCO/BTC', 'MDA/BTC', 'MFT/BTC', 'MITH/BTC', 'MTH/BTC', 'MTL/BTC', 'NANO/BTC', 'NAS/BTC', 'NAV/BTC', 'NCASH/BTC', 'NEBL/BTC', 'NEO/BTC', 'NPXS/BTC', 'NULS/BTC', 'NXS/BTC', 'OAX/BTC', 'OMG/BTC', 'ONE/BTC', 'ONG/BTC', 'ONT/BTC', 'OST/BTC', 'PHB/BTC', 'PIVX/BTC', 'POA/BTC', 'POE/BTC', 'POLY/BTC', 'POWR/BTC', 'PPT/BTC', 'QKC/BTC', 'QLC/BTC', 'QSP/BTC', 'QTUM/BTC', 'RCN/BTC', 'RDN/BTC', 'REN/BTC', 'REP/BTC', 'REQ/BTC', 'RLC/BTC', 'RVN/BTC', 'SC/BTC', 'SKY/BTC', 'SNGLS/BTC', 'SNM/BTC', 'SNT/BTC', 'STEEM/BTC', 'STORJ/BTC', 'STORM/BTC', 'STRAT/BTC', 'SYS/BTC', 'TFUEL/BTC', 'THETA/BTC', 'TNB/BTC', 'TNT/BTC', 'TRX/BTC', 'VET/BTC', 'VIA/BTC', 'VIB/BTC', 'VIBE/BTC', 'WABI/BTC', 'WAN/BTC', 'WAVES/BTC', 'WPR/BTC', 'WTC/BTC', 'XEM/BTC', 'XLM/BTC', 'XMR/BTC', 'XRP/BTC', 'XVG/BTC', 'XZC/BTC', 'ZEC/BTC', 'ZEN/BTC', 'ZIL/BTC', 'ZRX/BTC']"}
+2019-06-19 10:46:23,764 - freqtrade.persistence - INFO - Found open trade: Trade(id=13, pair=BRD/BTC, amount=57.94200000, open_rate=0.00004819, open_since=11 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=15, pair=KMD/BTC, amount=16.04394000, open_rate=0.00017430, open_since=11 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=16, pair=OST/BTC, amount=941.05800000, open_rate=0.00000297, open_since=8 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=19, pair=PHB/BTC, amount=1433.56500000, open_rate=0.00000195, open_since=3 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=20, pair=CELR/BTC, amount=1357.64100000, open_rate=0.00000207, open_since=2 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=21, pair=BCD/BTC, amount=19.83814200, open_rate=0.00014100, open_since=2 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=22, pair=ZEC/BTC, amount=0.22677300, open_rate=0.01232600, open_since=2 hours ago)
+2019-06-19 10:46:23,765 - freqtrade.persistence - INFO - Found open trade: Trade(id=23, pair=DASH/BTC, amount=0.16183800, open_rate=0.01728000, open_since=2 hours ago)
+2019-06-19 10:46:31,316 - freqtrade - ERROR - Fatal exception!
+Traceback (most recent call last):
+  File "C:\python37\lib\site-packages\ccxt\base\exchange.py", line 520, in fetch
+    response.raise_for_status()
+  File "C:\python37\lib\site-packages\requests\models.py", line 940, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.binance.com/api/v3/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\freqtrade\freqtrade\exchange\exchange.py", line 370, in create_order
+    amount, rate, params)
+  File "C:\python37\lib\site-packages\ccxt\binance.py", line 698, in create_order
+    response = getattr(self, method)(self.extend(order, params))
+  File "C:\python37\lib\site-packages\ccxt\base\exchange.py", line 415, in inner
+    return entry(_self, **inner_kwargs)
+  File "C:\python37\lib\site-packages\ccxt\binance.py", line 1218, in request
+    response = self.fetch2(path, api, method, params, headers, body)
+  File "C:\python37\lib\site-packages\ccxt\base\exchange.py", line 440, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+  File "C:\python37\lib\site-packages\ccxt\base\exchange.py", line 532, in fetch
+    self.handle_errors(response.status_code, response.reason, url, method, headers, http_response, json_response)
+  File "C:\python37\lib\site-packages\ccxt\binance.py", line 1201, in handle_errors
+    raise ExceptionClass(self.id + ' ' + message)
+ccxt.base.errors.InsufficientFunds: binance Account has insufficient balance for requested action.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/freqtrade/freqtrade/main.py", line 52, in main
+    worker.run()
+  File "D:\freqtrade\freqtrade\worker.py", line 72, in run
+    state = self._worker(old_state=state)
+  File "D:\freqtrade\freqtrade\worker.py", line 110, in _worker
+    self._throttle(func=self._process, min_secs=throttle_secs)
+  File "D:\freqtrade\freqtrade\worker.py", line 123, in _throttle
+    result = func(*args, **kwargs)
+  File "D:\freqtrade\freqtrade\worker.py", line 133, in _process
+    state_changed = self.freqtrade.process()
+  File "D:\freqtrade\freqtrade\freqtradebot.py", line 136, in process
+    state_changed |= self.process_maybe_execute_sell(trade)
+  File "D:\freqtrade\freqtrade\freqtradebot.py", line 464, in process_maybe_execute_sell
+    result = self.handle_trade(trade)
+  File "D:\freqtrade\freqtrade\freqtradebot.py", line 601, in handle_trade
+    if self.check_sell(trade, sell_rate, buy, sell):
+  File "D:\freqtrade\freqtrade\freqtradebot.py", line 716, in check_sell
+    self.execute_sell(trade, sell_rate, should_sell.sell_type)
+  File "D:\freqtrade\freqtrade\freqtradebot.py", line 857, in execute_sell
+    time_in_force=self.strategy.order_time_in_force['sell']
+  File "D:\freqtrade\freqtrade\exchange\exchange.py", line 412, in sell
+    return self.create_order(pair, ordertype, 'sell', amount, rate, params)
+  File "D:\freqtrade\freqtrade\exchange\exchange.py", line 374, in create_order
+    f'Insufficient funds to create {ordertype} {side} order on market {pair}.'
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+2019-06-19 10:46:31,320 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'process died'}
+2019-06-19 10:46:31,415 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
+2019-06-19 10:46:31,415 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
+
+Process finished with exit code 1
