@@ -433,7 +433,11 @@ class FreqtradeBot(object):
             if self.create_trade():
                 return True
 
+            CRED = '\033[91m'
+            CEND = '\033[0m'
+            print(CRED)
             logger.info('Found no buy signals for whitelisted currencies. Trying again..')
+            print(CEND)
             return False
         except DependencyException as exception:
             logger.warning('Unable to create trade: %s', exception)

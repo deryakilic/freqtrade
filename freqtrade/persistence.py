@@ -19,6 +19,8 @@ from sqlalchemy.pool import StaticPool
 
 from freqtrade import OperationalException
 
+import PrintColors
+
 logger = logging.getLogger(__name__)
 
 _DECL_BASE: Any = declarative_base()
@@ -302,15 +304,22 @@ class Trade(_DECL_BASE):
             # Update open rate and actual amount
             self.open_rate = Decimal(order['price'])
             self.amount = Decimal(order['amount'])
+            print(PrintColors.CBLUEBG)
             logger.info('%s_BUY has been fulfilled for %s.', order_type.upper(), self)
+            print(PrintColors.CEND)
             self.open_order_id = None
         elif order_type in ('market', 'limit') and order['side'] == 'sell':
             self.close(order['price'])
+            print(PrintColors.CBLUEBG2)
             logger.info('%s_SELL has been fulfilled for %s.', order_type.upper(), self)
+            print(PrintColors.CEND)
+
         elif order_type == 'stop_loss_limit':
             self.stoploss_order_id = None
             self.close_rate_requested = self.stop_loss
+            print(PrintColors.CGREEN)
             logger.info('STOP_LOSS_LIMIT is hit for %s.', self)
+            print(PrintColors.CEND)
             self.close(order['average'])
         else:
             raise ValueError(f'Unknown order type: {order_type}')
