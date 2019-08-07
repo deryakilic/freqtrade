@@ -24,7 +24,54 @@ python freqtrade/main.py -c config.json hyperopt --customhyperopt SampleHyperOpt
 Strateji için:
 
 python freqtrade/main.py -c config_binance_full.json -s Scalp
+
 seçmece whitelist:
 "BQX/BTC"
 
-hata mesajı:
+
+https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md
+
+
+klines(candle) data:
+
+https://api.binance.com/api/v1/klines?symbol=BTCUSDT&interval=1h
+
+Örnek:
+
+[
+  [
+    1499040000000,      // Open time
+    "0.01634790",       // Open
+    "0.80000000",       // High
+    "0.01575800",       // Low
+    "0.01577100",       // Close
+    "148976.11427815",  // Volume
+    1499644799999,      // Close time
+    "2434.19055334",    // Quote asset volume
+    308,                // Number of trades
+    "1756.87402397",    // Taker buy base asset volume
+    "28.46694368",      // Taker buy quote asset volume
+    "17928899.62484339" // Ignore.
+  ]
+]
+
+
+https://api.binance.com/api/v3/bookTicker?symbol=BTCUSDT
+
+[
+  [
+0 :	1565132400000       // Open time
+1 :	"11325.10000000"    // Open
+2 :	"11515.00000000"    // High
+3 :	"11292.73000000"    // Low
+4 :	"11481.69000000"    // Close
+5 :	"2664.59491400"     // Volume
+6 :	1565135999999       // Close time
+7 :	"30451933.57305016" // Quote asset volume
+8 :	20831               // Number of trades
+9 :	"1462.56498000"     // Taker buy base asset volume
+10:	"16711940.60967501" // Taker buy quote asset volume
+11:	"0"                 // Ignore.
+  ]
+]
+
