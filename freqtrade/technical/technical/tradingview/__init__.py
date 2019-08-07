@@ -1,4 +1,4 @@
-from technical.consensus import Consensus
+from freqtrade.technical.technical.consensus import Consensus
 
 
 class MovingAverageConsensus(Consensus):

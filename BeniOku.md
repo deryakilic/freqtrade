@@ -31,6 +31,7 @@ seçmece whitelist:
 
 https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md
 
+------------------------------------------------------------------------------------------------------------
 
 klines(candle) data:
 
@@ -56,6 +57,7 @@ https://api.binance.com/api/v1/klines?symbol=BTCUSDT&interval=1h
 ]
 
 
+------------------------------------------------------------------------------------------------------------
 https://api.binance.com/api/v3/bookTicker?symbol=BTCUSDT
 
 [
@@ -75,3 +77,27 @@ https://api.binance.com/api/v3/bookTicker?symbol=BTCUSDT
   ]
 ]
 
+------------------------------------------------------------------------------------------------------------
+https://api.binance.com/api/v1/ticker/24hr?symbol=BATBTC
+
+symbol	"BATBTC"
+priceChange	"0.00000068"
+priceChangePercent	"3.600"
+weightedAvgPrice	"0.00001892"
+prevClosePrice	"0.00001889"
+lastPrice	"0.00001957"
+lastQty	"712.00000000"
+bidPrice	"0.00001956"
+bidQty	"487.00000000"
+askPrice	"0.00001960"
+askQty	"284.00000000"
+openPrice	"0.00001889"
+highPrice	"0.00001962"
+lowPrice	"0.00001829"
+volume	"11675932.00000000"
+quoteVolume	"220.94392167"
+openTime	1565078992843
+closeTime	1565165392843
+firstId	12942949
+lastId	12960046
+count	17098
